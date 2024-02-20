@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Lineage 까치 Client Version 2.00</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        html, body {width:100%; height:100%;}
+        body {font-size:14px;background:url("./background.jpg")no-repeat center/cover scroll #fff;}
+        ul, li {list-style:none;}
+
+        header {position:fixed;top:0;left:0;font-size:18px;color:#fff;width:100%;height:90px;display:flex;align-items:center;justify-content:center;background-color:rgba(0,0,0,0.8);}
+        
+        article {line-height:1.4;background-color:rgba(0,0,0,0.2);text-align:center;display:flex;align-items:center;justify-content:center;width:100%;height:100%;}
+        article p {font-family:serif;font-size:21px;color:#fff;text-shadow:-1px 0 #000000, 0 3px #000000, 3px 0 #000000, 0 -3px #000000;}
+        article h1 {margin:50px auto;font-family:serif;color:#fff;font-size:40px;text-shadow:-1px 0 #000000, 0 3px #000000, 3px 0 #000000, 0 -3px #000000;}
+        article ul li {margin-bottom:20px;}
+        article ul li a {font-size:22px;text-decoration:none;color:rgb(255, 255, 0);text-shadow:-1px 0 #000000, 0 3px #000000, 3px 0 #000000, 0 -3px #000000;}
+
+        .banner-wrap {width:100%;height:100%;align-items:center;justify-content:center;position:fixed;top:0;left:0;display:flex;}
+        .banner-inner {background:#000;}
+        .banner-footer {color:#fff;width:100%;display:flex;align-items:center;justify-content:flex-end;padding:5px;gap:15px;}
+        .banner-footer li {margin-bottom:0;cursor:pointer;}
+        .banner-footer li > span {border:1px solid #fff;display:inline-block;width:20px;font-size:12px;margin-right:5px;}
+
+        .display-flex {display:flex;}
+</style>
+<script type="text/javascript">
+    const getCookie = (name) => {
+        const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+        return value ? value[2] : null;
+    }
+
+    const closeModal = () => {
+        const banner = document.getElementById('banner');
+        banner.style.display = "none"
+    }
+
+    const closeModalDuringOneday = () => {
+        let date = new Date(Date.now() + 86400e3);
+        date = date.toUTCString();
+        document.cookie = `bannerClose=T; expires=${date}`
+        closeModal();
+    }
+
+    function setBanner (){
+        const banner = document.getElementById('banner');
+        if (getCookie('bannerClose') == null) {
+            banner.className += " display-flex";
+        } else if(getCookie("bannerClose") == "T") {
+            closeModal();
+        };
+    }
+</script>
+</head>
+<body onload="setBanner();">
+    <header>
+        <p>Lineage 까치 Client Version 2.00</p>
+    </header>
+    <article>
+        <div>
+            <p>추억 리니지 우리들만의 놀이터<br />노초기화 기반 장기 서버<br /><br />모두가 즐겨했던<br />모두가 추억하던<br />모두가 열광했던<br /><br />그 리니지.. 까치서버와 함께</p>
+            <h1>The Episode 1<br />순정지향 노초기화 하자서버</h1>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1y0E4yVgODLkhFLrZa9IEh1uoRdpGYUck/view?usp=sharing" target="_blank">Google Drive 다운로드 # 1</a></li>
+                <li><a href="https://drive.google.com/file/d/1a-taZJdM6fkYGzU5Cyva-D0lkXWjrySC/view?usp=sharing" target="_blank">Google Drive 다운로드 # 2</a></li>
+                <li><a href="https://drive.google.com/file/d/1CeWtyPyTvK_QlWFaeA-Mp3ipdmrKPWF1/view?usp=sharing" target="_blank">Google Drive 다운로드 # 3</a></li>
+                <li><a href="https://drive.google.com/file/d/14UYBR4aypE9YYmm_1O7YskavjhRoa1I3/view?usp=sharing" target="_blank">Google Drive 다운로드 # 4</a></li>
+            </ul>
+        </div>
+        <div id="banner" class="banner-wrap">
+            <div class="banner-inner">
+                <img src="./banner.jpg" alt="배너 이미지">
+                <ul class="banner-footer">
+                    <li onclick="closeModalDuringOneday();"><span>X</span>24시간동안 보지않기</li>
+                    <li onclick="closeModal();"><span>X</span>닫기</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</body>
+</html>
