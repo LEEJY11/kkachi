@@ -19,7 +19,7 @@
         article ul li {margin-bottom:20px;}
         article ul li a {font-size:22px;text-decoration:none;color:rgb(255, 255, 0);text-shadow:-1px 0 #000000, 0 3px #000000, 3px 0 #000000, 0 -3px #000000;}
 
-        .banner-wrap {width:100%;height:100%;align-items:center;justify-content:center;position:fixed;top:0;left:0;display:none;}
+        .banner-wrap {width:100%;height:100%;align-items:center;justify-content:center;position:fixed;top:0;left:0;}
         .banner-inner {background:#000;}
         .banner-footer {color:#fff;width:100%;display:flex;align-items:center;justify-content:flex-end;padding:5px;gap:15px;}
         .banner-footer li {margin-bottom:0;cursor:pointer;}
@@ -55,7 +55,7 @@
     }
 </script>
 </head>
-<body> <!-- onload="setBanner();" -->
+<body onload="setBanner();">
     <header>
         <p>Lineage 까치 Client Version 2.00</p>
     </header>
@@ -72,7 +72,7 @@
         </div>
         <div id="banner" class="banner-wrap">
             <div class="banner-inner">
-                <img src="./banner.jpg" alt="배너 이미지">
+                <img src="./banner2.jpg" alt="배너 이미지">
                 <ul class="banner-footer">
                     <li onclick="closeModalDuringOneday();"><span>X</span>24시간동안 보지않기</li>
                     <li onclick="closeModal();"><span>X</span>닫기</li>
